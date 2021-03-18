@@ -11,4 +11,4 @@ def index():
         {'author': {'username': 'Feulo'},'body': 'Olá'}
     ]
 
-    return render_template("index.html", user = user,posts = posts)
+    return render_template("index.html", user = user,posts = posts, title = teste)

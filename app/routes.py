@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template
+from flask import render_template, request
 
 
 @app.route('/')
@@ -14,5 +14,6 @@ def index():
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
-    return render_template("login.html")
-
+    if request.method == "POST":
+        print(request.values.get("user"), request.values.get("pass"), request.values.get("remember"))
+    return render_template("login.html" , title="Login")
